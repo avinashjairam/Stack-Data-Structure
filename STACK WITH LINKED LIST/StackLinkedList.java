@@ -12,37 +12,48 @@ public class StackLinkedList{
 		count++;
 
 		if(head == null){
-			head = newNode;
+			head = new Node(data);
+			return;
 		}
 		
 		Node last = head;
-		
+		newNode.next = null;
+
 		//Traverse the list to get to the end
 		while(last.next != null){
+			//System.out.print(last.data + " ");
 			last = last.next;
 		}
 
+		System.out.println();
 		last.next = newNode;
 	}
 
 	public int pop(){
 		//Traverse the list to get to the end 
-		if(head == null){
-			return -1;
-		}
+		int x = -1;
+		
 
 		Node last = head;
 		Node prev = null;
 
-		while(last != null){
-			prev = last; 
-			last = last.next;
+		if(last == null){
+			return -1;
 		}
 
-		prev.next = null;
+		while(last.next != null){
+		 	prev = last;
+		 	last = last.next;
+		 	System.out.print("prev " + prev.data + " last " + last.data);				
+		 }
+		last = prev;
+		x = last.next.data;
+		last.next = null;
 
+		System.out.println();
+	
 		count--;
-		return last.data;
+		return x;
 	}
 
 	public int getSize(){

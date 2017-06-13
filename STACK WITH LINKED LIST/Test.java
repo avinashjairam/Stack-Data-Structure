@@ -13,5 +13,11 @@ public class Test{
 
 		System.out.println("top of list is: " + list.top());
 
+		System.out.println("popping " + list.pop());
+
+		System.out.println("top of list is: " + list.top());
+
+
+
 	}
 }
