@@ -12,13 +12,13 @@ public class StackLinkedList{
 		count++;
 
 		if(head == null){
-			head = newNode();
+			head = newNode;
 		}
 		
 		Node last = head;
 		
 		//Traverse the list to get to the end
-		while(last != null){
+		while(last.next != null){
 			last = last.next;
 		}
 
